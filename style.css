@@ -17,12 +17,21 @@
     padding: 1.5rem 0
 }
 
-#cardsContainer {
-    min-height: calc(100vh - 101px);
+body {
     background-image: url(img/cork.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+#cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    max-width: 75rem;
+    background-color: pink;
+    margin: 2rem auto;
 }
 
 .card {
