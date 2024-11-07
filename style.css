@@ -92,6 +92,7 @@ img {
 }
 
 #closeButton {
+    cursor: pointer;
     color: #FFC107;
     font-size: 35px;
     position: relative;
