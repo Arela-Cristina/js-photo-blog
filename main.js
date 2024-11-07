@@ -41,7 +41,7 @@ function appendToTemplate(data) { //parametro data
     //per ogni thumb 
     thumbs.forEach(thumb => { //aggiungiamo un evento (e) => {} al click
         thumb.addEventListener('click', (e) => {
-            let imgSrc = e.target.src;
+            let imgSrc = e.target.src; // salviamo in una variabile il percorso della src target = la img corrente
             console.log('hai cliccato la immagine', imgSrc)
         });
 
