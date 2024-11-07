@@ -5,6 +5,7 @@ console.log(cardsContainer)
 
 //elemento DOM overlay 
 const overlay = document.getElementById('overlay');
+const imgOverlay = document.querySelector('.imgOverlay') //elemento DOM
 
 //elemento button DOM
 const closeButton = document.getElementById('closeButton')
@@ -18,9 +19,9 @@ axios.get('https://jsonplaceholder.typicode.com/photos?_limit=6') //chiamata HTT
 
     .then(res => {
         console.log(res.data) //debug
-        data = res.data;
+        let data = res.data;
         //invocchiamo la funzione pasandoli come parametro la nostra data
-        appendToTemplate(data)
+        appendToTemplate(data);
 
     })
 
@@ -48,6 +49,7 @@ function appendToTemplate(data) { //parametro data
     //per ogni thumb 
     thumbs.forEach(thumb => { //aggiungiamo un evento (e) => {} al click
         thumb.addEventListener('click', (e) => {
+            console.log('sono il evento', (e));
             let thumbSrc = e.target.src; // salviamo in una variabile il percorso della src target = la img corrente
             console.log('hai cliccato la immagine', thumbSrc);
             showThumbOnOverlay(thumbSrc) //invochiamo la funzione passandoli al parametro il elemento thumbSrc
@@ -58,8 +60,8 @@ function appendToTemplate(data) { //parametro data
 
 //creiamo una funzione per mostrare la thumb nel overlay
 function showThumbOnOverlay(thumbSrc) {
-    const overlay = document.getElementById('overlay') //elemento DOM
-    let imgOverlay = document.querySelector('.imgOverlay') //elemento DOM
+    // const overlay = document.getElementById('overlay') //elemento DOM
+    // let imgOverlay = document.querySelector('.imgOverlay') //elemento DOM
 
     imgOverlay.src = thumbSrc; //img overlay sera igual a la thumb
     overlay.style.display = 'flex'; //overlay appare in display flex
