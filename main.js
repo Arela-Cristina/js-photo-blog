@@ -41,9 +41,18 @@ function appendToTemplate(data) { //parametro data
     //per ogni thumb 
     thumbs.forEach(thumb => { //aggiungiamo un evento (e) => {} al click
         thumb.addEventListener('click', (e) => {
-            let imgSrc = e.target.src; // salviamo in una variabile il percorso della src target = la img corrente
-            console.log('hai cliccato la immagine', imgSrc)
+            let thumbSrc = e.target.src; // salviamo in una variabile il percorso della src target = la img corrente
+            console.log('hai cliccato la immagine', thumbSrc)
         });
 
     });
+}
+
+//creiamo una funzione per mostrare la thumb nel overlay
+function showThumbOnOverlay(thumbSrc) {
+    const overlay = document.getElementById('overlay') //elemento DOM
+    let imgOverlay = document.querySelector('.imgOverlay') //elemento DOM
+
+    imgOverlay.src = thumbSrc;
+    overlay.style.display = 'flex';
 }
