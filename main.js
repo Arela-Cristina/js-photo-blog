@@ -25,7 +25,7 @@ function appendToTemplate(data) { //parametro data
         //aggiungiamo template literal
         const card = ` 
             <div class="card">
-                <img src="${url}" alt="${title}" id="${id}">
+                <img src="${url}" alt="${title}" id="${id}" class="thumb">
                 <div class="caption">
                     ${title}
                 </div>
@@ -33,5 +33,17 @@ function appendToTemplate(data) { //parametro data
 
         // appendiamo card al container
         cardsContainer.innerHTML += card;
+    });
+
+    //prendiamo ancora tutti i 6 elementi
+    const thumbs = document.querySelectorAll(".thumb");
+    console.log('HTML collection', thumbs);
+    //per ogni thumb 
+    thumbs.forEach(thumb => { //aggiungiamo un evento (e) => {} al click
+        thumb.addEventListener('click', (e) => {
+            let imgSrc = e.target.src;
+            console.log('hai cliccato la immagine', imgSrc)
+        });
+
     });
 }
