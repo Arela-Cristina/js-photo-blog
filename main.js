@@ -35,6 +35,7 @@ function appendToTemplate(data) { //parametro data
                 <div class="caption">
                     ${title}
                 </div>
+                <img class="pin" src="img/pin.svg" alt="pin">
             </div>`;
 
         // appendiamo card al container
