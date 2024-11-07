@@ -49,7 +49,7 @@ function appendToTemplate(data) { //parametro data
         thumb.addEventListener('click', (e) => {
             let thumbSrc = e.target.src; // salviamo in una variabile il percorso della src target = la img corrente
             console.log('hai cliccato la immagine', thumbSrc);
-            showThumbOnOverlay(thumbSrc)
+            showThumbOnOverlay(thumbSrc) //invochiamo la funzione passandoli al parametro il elemento thumbSrc
         });
 
     });
