@@ -64,7 +64,14 @@ function showThumbOnOverlay(thumbSrc) {
     overlay.style.display = 'flex'; //overlay appare in display flex
 }
 
-//evento click bottone close
+//evento click chiudere overlay con il bottone close
 closeButton.addEventListener('click', () => {
     overlay.style.display = 'none'
 });
+
+//evento click chiudere overlay clicando il background etc.. 
+overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) { // target=overlay se e.target uguale a overlay
+        overlay.style.display = 'none'; //add display none
+    }
+})
