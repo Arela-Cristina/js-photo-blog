@@ -3,6 +3,12 @@
 const cardsContainer = document.getElementById('cardsContainer');
 console.log(cardsContainer)
 
+//elemento DOM overlay 
+const overlay = document.getElementById('overlay');
+
+//elemento button DOM
+const closeButton = document.getElementById('closeButton')
+
 //chiamiamo axios 
 axios.get('https://jsonplaceholder.typicode.com/photos?_limit=6') //chiamata HTTP => API
 
@@ -57,3 +63,8 @@ function showThumbOnOverlay(thumbSrc) {
     imgOverlay.src = thumbSrc; //img overlay sera igual a la thumb
     overlay.style.display = 'flex'; //overlay appare in display flex
 }
+
+//evento click bottone close
+closeButton.addEventListener('click', () => {
+    overlay.style.display = 'none'
+});
