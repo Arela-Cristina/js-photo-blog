@@ -45,7 +45,7 @@ function appendToTemplate(data) { //parametro data
 
     //prendiamo ancora tutti i 6 elementi
     const thumbs = document.querySelectorAll(".thumb");
-    console.log('HTML collection', thumbs);
+    console.log('nodeList', thumbs);
     //per ogni thumb 
     thumbs.forEach(thumb => { //aggiungiamo un evento (e) => {} al click
         thumb.addEventListener('click', (e) => {
